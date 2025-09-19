@@ -3,14 +3,14 @@ using System.Timers;
 
 public class temperatureSensor
 {
-	private double currentTemperature; //Variable donde se va a almacenar la temperatura actual
+	private int currentTemperature; //Variable donde se va a almacenar la temperatura actual
     private Random random = new Random();//Variable para generar numeros aleatorios
     private Timer timer;//Variable para controlar el tiempo
 
     public temperatureSensor()
     {
         timer = new Timer(1000);//Se inicializa el timer para que se ejecute cada segundo
-        timer.Elapsed += (s,e) => generateTemperature();//Se llama a la funcion generateTemperature cada vez que se ejecuta el timer
+        timer.Elapsed += (s,e) => GenerateTemperature();//Se llama a la funcion generateTemperature cada vez que se ejecuta el timer
         timer.Start();//Se inicia el timer
     }
     public event EventHandler HighTemperatureReached;
@@ -18,7 +18,7 @@ public class temperatureSensor
 
     public void GenerateTemperature()
         {
-        currentTemperature = random.Next(20, 100);//Se genera un numero aleatorio entre 20 y 100
+        currentTemperature = random.Next(20, 101);//Se genera un numero aleatorio entre 20 y 100
         if(currentTemperature > 75)
         {
             HighTemperatureReached?.Invoke(this, EventArgs.Empty);//Si la temperatura es mayor a 75 se lanza el evento de alta temperatura
