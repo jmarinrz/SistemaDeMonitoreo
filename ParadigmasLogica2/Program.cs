@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ParadigmasLogica2
+namespace SistemaDeMonitoreo
 {
-    internal class Program
+    internal class SistemaDeMonitoreo
     {
         static void Main(string[] args)
-        {
-        }
+        { 
+           
     }
 }
