@@ -7,7 +7,7 @@ namespace SistemaDeMonitoreo
     {
         private double currentTemperature; // Variable donde se va a almacenar la temperatura actual
         private Random random = new Random(); // Variable para generar números aleatorios
-        private Timer timer; // Variable para controlar el tiempo
+        public Timer timer; // Variable que va a controlar el tiempo entre cada generación de temperatura
 
         public TemperatureSensor()
         {
