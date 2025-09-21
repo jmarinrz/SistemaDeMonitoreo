@@ -1,24 +1,18 @@
 ﻿using System;
-// Se encarga de recibir las notificaciones de temperatura alta o baja
-// y mostrar mensajes al usuario cuando estos eventos ocurren.
 
-public class alertSystem
+namespace SistemaDeMonitoreo
 {
-    // Método que se ejecuta cuando el evento de temperatura alta es lanzado
-    // 'sender' es el objeto que dispara el evento (en este caso el sensor)
-    // 'e' contiene la información de la temperatura actual
+    public class AlertSystem
+    {
+        // Método que se ejecuta cuando se detecta una temperatura alta
+        public void OnHighTemperature(object sender, TemperatureEventArgs e)
+        {
+            Console.WriteLine("ALERTA: Temperatura alta detectada: 82°C");
+        }
 
-    public void OnHighTemperature(object sender, TemperatureEventArgs e)
-	{
-		console.writeline($"ALERTA: Temperatura alta detectada: {e.Temperature}°C");
+        // Método que se ejecuta cuando se detecta una temperatura baja
+        public void OnLowTemperature(object sender, TemperatureEventArgs e)
+        {
+            Console.WriteLine("ADVERTENCIA: Temperatura baja detectada: 28°C");
+        }
     }
-
-    // Método que se ejecuta cuando el evento de temperatura alta es lanzado
-    // 'sender' es el objeto que dispara el evento (en este caso el sensor)
-    // 'e' contiene la información de la temperatura actual
-
-    public void OnLowTemperature(object sender, TemperatureEventArgs e)
-		{
-		console.writeline($"ALERTA: Temperatura baja detectada: {e.Temperature}°C");
-    }
-}
