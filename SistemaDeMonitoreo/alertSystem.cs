@@ -13,7 +13,7 @@ namespace SistemaDeMonitoreo
         // Método que se ejecuta cuando se detecta una temperatura baja
         public void OnLowTemperature(object sender, TemperatureEventArgs e)
         {
-            Console.WriteLine($"ALERTA: Temperatura baja detectada: {e.Temperature}°C");
+            Console.WriteLine($"ADVERTENCIA: Temperatura baja detectada: {e.Temperature}°C");
         }
     }
 }
